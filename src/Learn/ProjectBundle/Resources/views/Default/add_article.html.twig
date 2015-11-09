@@ -1,0 +1,14 @@
+{% extends "::default/Index.html.twig" %}
+
+{% block page %}
+    <h3>Ajouter un nouvel article</h3>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+    
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="flash-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+{% endblock %}

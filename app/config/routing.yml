@@ -1,0 +1,10 @@
+learn_user:
+    resource: "@LearnUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+learn_project:
+    resource: "@LearnProjectBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

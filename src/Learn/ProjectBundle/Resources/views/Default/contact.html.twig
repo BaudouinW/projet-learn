@@ -1,0 +1,14 @@
+{% extends "::default/Index.html.twig" %}
+
+{% block page %}
+    <h3>Contacter moi</h3>
+    {{ form_start(formContact) }}
+    {{ form_widget(formContact) }}
+    {{ form_end(formContact) }}
+    
+      {% for flashMessage in app.session.flashbag.get('contact') %}
+        <div class="flash-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+{% endblock %}

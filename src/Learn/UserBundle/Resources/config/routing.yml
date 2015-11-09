@@ -1,0 +1,7 @@
+learn_project_register:
+    path:   /register
+    defaults: { _controller:LearnUserBundle:Registration:register}
+    
+Learn_project_confirmed:
+    path: /register/confirmed
+    defaults: {_controller:LearnUserBundle:Registration:confirmed}

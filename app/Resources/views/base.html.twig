@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Learn Project{% endblock %}</title>
+        {% stylesheets '@LearnProjectBundle/Resources/public/css/structure.css' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>

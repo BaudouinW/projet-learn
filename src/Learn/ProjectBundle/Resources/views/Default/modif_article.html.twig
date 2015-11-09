@@ -1,0 +1,14 @@
+{% extends "::default/Index.html.twig" %}
+
+{% block page %}
+    <h3>Modifier l'article {{ id }}</h3>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+    {% for flashMessage in app.session.flashbag.get('modif') %}
+        <div class="flash-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+{% endblock %}

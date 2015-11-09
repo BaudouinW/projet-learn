@@ -1,0 +1,5 @@
+{% for article in articleRecent %}
+    <p class="article_recent" onclick="window.location.href = '{{ path('learn_project_detail_article', { 'id' : article.id}) }}';">{{ article.titre }}<br/>
+        par : {{ article.auteur }}<br/>
+        le {{ article.datePublication| date('d/m/Y') }}</p>
+{% endfor %}
