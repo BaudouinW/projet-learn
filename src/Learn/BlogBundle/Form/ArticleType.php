@@ -1,6 +1,6 @@
 <?php
 
-namespace Learn\ProjectBundle\Form;
+namespace Learn\BlogBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -29,7 +29,7 @@ class ArticleType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Learn\ProjectBundle\Entity\Article'
+            'data_class' => 'Learn\BlogBundle\Entity\Article'
         ));
     }
 
