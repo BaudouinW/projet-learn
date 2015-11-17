@@ -1,22 +1,6 @@
 learn_project_homepage:
     path:     /
     defaults: { _controller: LearnProjectBundle:Accueil:Accueil}
-
-learn_project_add_article:
-    path:     /Ajout
-    defaults: { _controller: LearnProjectBundle:Article:Add}
-
-learn_project_modif_article:
-    path:     /Modif/{id}
-    defaults: { _controller: LearnProjectBundle:Article:Modif}
-    
-learn_project_suppr_article:
-    path:     /suppr/{id}
-    defaults: { _controller: LearnProjectBundle:Article:Suppr}
-
-learn_project_detail_article:
-    path:     /article/{id}
-    defaults: { _controller: LearnProjectBundle:Article:Detail}
     
 learn_project_contact:
     path:   /contact

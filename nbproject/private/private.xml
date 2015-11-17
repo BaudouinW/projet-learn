@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/Repository%20github/projet_learn/src/Learn/ProjectBundle/Controller/ArticleController.php</file>
+            <file>file:/D:/Repository%20github/projet_learn/app/Resources/views/default/index.html.twig</file>
+            <file>file:/D:/Repository%20github/projet_learn/src/Learn/UserBundle/Resources/views/Security/login.html.twig</file>
+            <file>file:/D:/Repository%20github/projet_learn/src/Learn/UserBundle/Resources/config/routing.yml</file>
+            <file>file:/D:/Repository%20github/projet_learn/src/Learn/ProjectBundle/Entity/ArticleRepository.php</file>
+            <file>file:/D:/Repository%20github/projet_learn/src/Learn/ProjectBundle/Resources/views/Default/article_recent.html.twig</file>
+            <file>file:/D:/Repository%20github/projet_learn/src/Learn/ProjectBundle/Controller/AccueilController.php</file>
+        </group>
     </open-files>
 </project-private>

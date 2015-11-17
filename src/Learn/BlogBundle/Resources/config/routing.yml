@@ -1,0 +1,19 @@
+learn_project_blog:
+    path:   /blog
+    defaults: {_controller: LearnBlogBundle:Blog:Accueil}
+
+learn_project_add_article:
+    path:     /blog/Ajout
+    defaults: { _controller: LearnBlogBundle:Article:Add}
+
+learn_project_modif_article:
+    path:     /blog/Modif/{id}
+    defaults: { _controller: LearnBlogBundle:Article:Modif}
+    
+learn_project_suppr_article:
+    path:     /blog/suppr/{id}
+    defaults: { _controller: LearnBlogBundle:Article:Suppr}
+
+learn_project_detail_article:
+    path:     /blog/article/{id}
+    defaults: { _controller: LearnBlogBundle:Article:Detail}

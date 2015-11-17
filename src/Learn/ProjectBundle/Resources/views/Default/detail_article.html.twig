@@ -1,18 +1,26 @@
 {% extends "::default/Index.html.twig" %}
 
 {% block page %}
-    <article>
-        <h3>Detail de l'article numéro : {{ article.id }}</h3>
-        <p>{{ article.titre }}</br>
-            {{ article.contenu }}</br>
-            {{ article.auteur }} - {{ article.datePublication|date('d/m/Y') }}</p>
-        <button onclick="window.location.href='{{ path('learn_project_modif_article', {'id': article.id}) }}';">modifier</button>
-        <button onclick="window.location.href='{{ path('learn_project_suppr_article', {'id': article.id}) }}';">Supprimer</button>
-        
+<article>
+    <h3>Detail de l'article numéro : {{ article.id }}</h3>
+    <p>{{ article.titre }}</br>
+        {{ article.contenu }}</br>
+        {{ article.auteur }} - {{ article.datePublication|date('d/m/Y') }}</p>
+    <button onclick="window.location.href = '{{ path('learn_project_modif_article', {'id': article.id}) }}';">modifier</button>
+    <button onclick="window.location.href = '{{ path('learn_project_suppr_article', {'id': article.id}) }}';">Supprimer</button>
+
         {% for flashMessage in app.session.flashbag.get('notice') %}
-        <div class="flash-notice">
+    <div class="flash-notice">
             {{ flashMessage }}
-        </div>
+    </div>
     {% endfor %}
-    </article>
+</article>
+<div class="all_commentaire">
+    {% include 'LearnBlogBundle::commentaire/all_commentaire.html.twig' %}
+</div>
+<div class="article_ajout_commentaire">
+    <label>Commentaire :</label><br/>
+    <textarea placeholder="Ajouter un commentaire"></textarea>
+    <button onclick="window.location.href='';">Ajouter</button>
+</div>
 {% endblock %}

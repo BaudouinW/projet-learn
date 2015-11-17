@@ -1,6 +1,6 @@
 <?php
 
-namespace Learn\ProjectBundle\Entity;
+namespace Learn\BlogBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NoResultException;

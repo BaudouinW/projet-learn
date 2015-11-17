@@ -1,50 +1,37 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <header>
-        <h1>Learn Project <br/> Blog Symfony</h1>
-        <div class="connexion">
-            <label>Connexion</label>
-            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                <a href="{{ path('fos_user_security_logout') }}">
-                    Déconnexion
-                </a>
-            {% else %}
-                {{ render(controller('LearnUserBundle:Security:Login')) }}
-            {% endif %}
-
-            {% if app.request.hasPreviousSession %}
-                {% for type, messages in app.session.flashbag.all() %}
-                    {% for message in messages %}
-                        <div class="flash-{{ type }}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endfor %}
-            {% endif %}
-        </div>
-    </header>
-    <div class="nav">
-        <nav>
-            <ul>
-                <li><a href="{{ path('learn_project_homepage') }}">Accueil</a></li>
-                <li><a href="{{ path('learn_project_add_article') }}">Ajouter article</a></li>
-                <li><a href="{{ path('learn_project_register') }}">S'inscrire</a></li>
-                <li><a href="{{ path('learn_project_contact') }}">Contactez moi</a></li>
-            </ul>
-        </nav>
-        <aside>
-            <h3>Articles Récent</h3>
-            {{ render(controller('LearnProjectBundle:Accueil:Recent')) }}
-        </aside>
+<header>
+    <div class="titre">
+        <h1>Learn Project <br/> Blog Symfony</h1> 
     </div>
-    <section>
-        {% block page %}
-        {% endblock %}
-    </section>
-    <footer>
-        <p>All right reserved - @copyright - coded and designed by Baudouin Wartel</p>
-    </footer>
+    <div class="connexion">
+        <label>Espace Connexion</label><br/>
+          {% include 'LearnUserBundle::Security/login.html.twig' %}
+    </div>
+</header>
+<nav>
+    <div class="menu_droit">
+        <ul>
+            <li><a href="{{ path('learn_project_homepage') }}">Accueil</a></li>
+            <li><a href="{{ path('learn_project_blog') }}">Espace Blog</a></li>
+            <li><a href="">Espace E-commerce</a></li>
+            <li><a href="{{ path('learn_project_add_article') }}">Ajouter article</a></li>
+            <li><a href="{{ path('learn_project_register') }}">S'inscrire</a></li>
+            <li><a href="{{ path('learn_project_contact') }}">Contactez moi</a></li>
+        </ul>
+    </div>
+    <div class="menu_article_recent">
+        <h3>Articles Récent</h3>
+        {{ render(controller('LearnBlogBundle:Blog:Recent')) }}
+    </div>
+</nav>
+<section>
+{% block page %}
+{% endblock %}
+</section>
+<footer>
+    <p>All right reserved - @copyright - coded and designed by Baudouin Wartel</p>
+</footer>
 {% endblock %}
 
