@@ -6,6 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Learn\BlogBundle\Entity\Article;
 use Learn\BlogBundle\Form\ArticleType;
+use Learn\BlogBundle\Entity\Commentaire;
+use Learn\BlogBundle\Form\CommentaireType;
+
 
 /**
  * Description of ArticleController
@@ -59,8 +62,15 @@ class ArticleController extends Controller {
     public function DetailAction($id) {
 
         $article = $this->getDoctrine()->getManager()->getRepository('LearnBlogBundle:Article')->find($id);
+        $comment = $this->getDoctrine()->getManager()->getRepository('LearnBlogBundle:Commentaire')->findAllCommentById($id);
+        
+        $commentaire = new Commentaire();
+        $form = $this->createForm(new CommentaireType(), $commentaire);
 
-        return $this->render('LearnProjectBundle::Default/detail_article.html.twig', array('article' => $article));
+        return $this->render('LearnProjectBundle::Default/detail_article.html.twig', array(
+            'article' => $article, 
+            'comments' => $comment,
+            'form' => $form->createView(),));
     }
 
     public function SupprAction($id) {

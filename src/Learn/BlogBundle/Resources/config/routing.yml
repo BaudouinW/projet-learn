@@ -9,11 +9,24 @@ learn_project_add_article:
 learn_project_modif_article:
     path:     /blog/Modif/{id}
     defaults: { _controller: LearnBlogBundle:Article:Modif}
+    requirements:
+        id: \d+
     
 learn_project_suppr_article:
     path:     /blog/suppr/{id}
     defaults: { _controller: LearnBlogBundle:Article:Suppr}
+    requirements:
+        id: \d+
 
 learn_project_detail_article:
     path:     /blog/article/{id}
     defaults: { _controller: LearnBlogBundle:Article:Detail}
+    requirements:
+        id: \d+
+
+learn_project_add_comment:
+    path:   /comment/article/{id}
+    defaults: { _controller: LearnBlogBundle:Comment:add}
+    requirements:
+        _method: POST
+        id: \d+

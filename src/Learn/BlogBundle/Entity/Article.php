@@ -3,6 +3,7 @@
 namespace Learn\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Article
@@ -48,6 +49,17 @@ class Article
      * @ORM\Column(name="auteur", type="string", length=255)
      */
     private $auteur;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Learn\BlogBundle\Entity\Commentaire", mappedBy="article")
+     */  
+    protected $commentaire;
+    
+    public function _construct()
+    {
+        $this->commentaire = new ArrayCollection();
+        $this->setDatePublication(new \DateTime());
+    }
 
 
     /**

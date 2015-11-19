@@ -1,0 +1,9 @@
+{% if form is not empty %}
+    <form action="{{ path('learn_project_add_comment', { 'id' : article } ) }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <input type="submit" value="Ajouter">
+    </p>
+    </form>
+
+{% endif %}
