@@ -6,7 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Learn\BlogBundle\Entity\Commentaire;
 use Learn\BlogBundle\Form\CommentaireType;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Description of CommentController
@@ -33,8 +32,7 @@ class CommentController extends Controller {
         {
             $em = $this->getDoctrine()->getManager();
             $em->persist($comment);
-            $em->flush();
-            
+            $em->flush();       
         }
         
         return $this->redirect($this->generateUrl('learn_project_detail_article', array('id' => $id)));
