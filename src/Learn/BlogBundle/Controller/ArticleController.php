@@ -39,7 +39,7 @@ class ArticleController extends Controller {
     public function ModifAction($id, Request $request) {
 
         $em = $this->getDoctrine()->getManager();
-        $article = $em->getRepository('LearnBlogBundle:Article')->find($id);
+        $article = $this->getArticle($id);
 
         $form = $this->createForm(new ArticleType(), $article);
 
@@ -61,7 +61,7 @@ class ArticleController extends Controller {
 
     public function DetailAction($id) {
 
-        $article = $this->getDoctrine()->getManager()->getRepository('LearnBlogBundle:Article')->find($id);
+        $article = $this->getArticle($id);
         $comment = $this->getDoctrine()->getManager()->getRepository('LearnBlogBundle:Commentaire')->findAllCommentById($id);
         
         $commentaire = new Commentaire();
@@ -75,13 +75,27 @@ class ArticleController extends Controller {
 
     public function SupprAction($id) {
 
-        $em = $this->getDoctrine()->getManager();
-        $article = $em->getRepository('LearnBlogBundle:Article')->find($id);
+        $article = $this->getArticle($id);
 
+        $em = $this->getDoctrine()->getManager();
         $em->remove($article);
         $em->flush();
         
         return $this->redirectToRoute('learn_project_homepage');
+    }
+    
+    protected function getArticle($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        
+        $article = $em->getRepository('LearnBlogBundle:Article')->find($id);
+        
+        if(!$article)
+        {
+            throw $this->createNotFoundException('Article non trouvé');
+        }
+        
+        return $article;
     }
 
 }

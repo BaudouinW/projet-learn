@@ -10,12 +10,13 @@
           {% include 'LearnUserBundle::Security/login.html.twig' %}
     </div>
 </header>
+{% block nav %}
 <nav>
     <div class="menu_droit">
         <ul>
             <li><a href="{{ path('learn_project_homepage') }}">Accueil</a></li>
             <li><a href="{{ path('learn_project_blog') }}">Espace Blog</a></li>
-            <li><a href="">Espace E-commerce</a></li>
+            <li><a href="{{ path('learn_project_shop') }}">Espace E-commerce</a></li>
             <li><a href="{{ path('learn_project_add_article') }}">Ajouter article</a></li>
             <li><a href="{{ path('learn_project_register') }}">S'inscrire</a></li>
             <li><a href="{{ path('learn_project_contact') }}">Contactez moi</a></li>
@@ -26,12 +27,15 @@
         {{ render(controller('LearnBlogBundle:Blog:Recent')) }}
     </div>
 </nav>
+{% endblock %}
 <section>
 {% block page %}
 {% endblock %}
 </section>
+{% block footer %}
 <footer>
     <p>All right reserved - @copyright - coded and designed by Baudouin Wartel</p>
 </footer>
+{% endblock %}
 {% endblock %}
 

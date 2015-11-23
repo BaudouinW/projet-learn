@@ -1,3 +1,7 @@
+learn_shop:
+    resource: "@LearnShopBundle/Resources/config/routing.yml"
+    prefix:   /
+
 learn_blog:
     resource: "@LearnBlogBundle/Resources/config/routing.yml"
     prefix:   /

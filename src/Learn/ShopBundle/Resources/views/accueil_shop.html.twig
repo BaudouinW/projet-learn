@@ -1,0 +1,29 @@
+{% extends 'default/index.html.twig' %}
+
+{% block title %} Learn project - Shop {% endblock %}
+
+{% block nav %}
+<nav>
+    <div class="menu_droit">
+        <ul class="niveau1">
+            <li><a href="{{ path('learn_project_homepage') }}">Accueil</a></li>
+            <li><a href="{{ path('learn_project_blog') }}">Espace Blog</a></li>
+            <li class="sous_menu"><a href="">Epicerie</a>
+                <ul class="niveau2">
+                    <li><a href="">Fruits</a></li>
+                    <li><a href="">Légumes</a></li>
+                </ul>
+            </li>
+            <li><a href="{{ path('learn_project_register') }}">S'inscrire</a></li>
+            <li><a href="{{ path('learn_project_contact') }}">Contactez moi</a></li>
+        </ul>
+    </div>
+    <div class="menu_article_recent">
+        <h3>Nouveaux produit</h3>
+
+    </div>
+</nav>
+{% endblock %}
+{% block page %}
+<h2>Accueil de l'espace shop</h2>
+{% endblock %}

@@ -1,11 +1,14 @@
 {% extends 'default/index.html.twig' %}
 
+{% block title %}Learn Project - Blog{% endblock %}
+
 {% block page %}
-{% include 'LearnBlogBundle::nav/blog_nav.html.twig' %}
+<h2>Accueil du blog - liste des articles</h2>
     {% for article in articles %}
     <div class="article" onclick="window.location.href = '{{ path('learn_project_detail_article', { 'id' : article.id}) }}';">
         <p>{{ article.titre }}<br/>
-                {{ article.auteur }} - {{ article.datePublication|date('d/m/Y') }}</p>
+               par : {{ article.auteur }} <br/>
+               le : {{ article.datePublication|date('d/m/Y') }}</p>
     </div>
     {% endfor %}
 {% endblock %}

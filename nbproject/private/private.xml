@@ -9,8 +9,10 @@
             <file>file:/D:/Repository%20github/projet_learn/app/Resources/views/default/index.html.twig</file>
             <file>file:/D:/Repository%20github/projet_learn/src/Learn/UserBundle/Resources/views/Security/login.html.twig</file>
             <file>file:/D:/Repository%20github/projet_learn/src/Learn/BlogBundle/Entity/Commentaire.php</file>
-            <file>file:/D:/Repository%20github/projet_learn/src/Learn/UserBundle/Resources/config/routing.yml</file>
+            <file>file:/D:/Repository%20github/projet_learn/src/Learn/BlogBundle/Resources/config/routing.yml</file>
             <file>file:/D:/Repository%20github/projet_learn/src/Learn/ProjectBundle/Controller/AccueilController.php</file>
+            <file>file:/D:/Repository%20github/projet_learn/src/Learn/BlogBundle/Entity/Article.php</file>
+            <file>file:/D:/Repository%20github/projet_learn/src/Learn/BlogBundle/Resources/views/commentaire/form_commentaire.html.twig</file>
         </group>
     </open-files>
 </project-private>

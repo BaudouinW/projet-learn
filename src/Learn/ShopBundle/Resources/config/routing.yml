@@ -1,0 +1,3 @@
+learn_project_shop:
+    path:     /shop
+    defaults: { _controller: LearnShopBundle:Shop:Accueil }

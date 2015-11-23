@@ -64,31 +64,55 @@ nav{
     margin-right: 2%;
 }
 
+.menu_droit{
+    width: 100%;
+}
+
 .menu_droit ul{
     width: 100%;
-    margin-left: -17.5%;
-    cursor: pointer;
+    padding: 0;
+    margin: 0px;
+    border:1px solid; 
 }
 
 .menu_droit ul li{
-    text-align: center;
+    position: relative;
     list-style-type: none;
-    background-color: buttonface;
-    border: 1px solid gray;
-    height: 35px;
-    padding-top: 10px;
+    height: 40px;
+    background-color: wheat;
+    border: 1px solid;
 }
 
-.menu_droit ul li a{
+.menu_droit ul ul{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    display: none;
+}
+
+.menu_droit li a{
+    text-align: center;
     text-decoration: none;
     font-size: 130%;
     color: black;
+    display: block;
+    width: 100%;
+    border-left:10px solid #BBB;
+    height: 35px;
+    padding: 2% 0 0 0;
 }
 
-.menu_droit ul li:hover{
-    transform: scale(1.1);
+.menu_droit li a:hover{
+    border-left-color: blue;
 }
 
+.menu_droit ul ul li a:hover{
+    border-left-color: #5eb5e0;
+}
+
+.menu_droit ul.niveau1 li.sous_menu:hover ul.niveau2{
+    display: block;
+}
 
 .menu_article_recent{
     text-align: center;
@@ -104,6 +128,18 @@ nav{
 
 .article_recent:hover{
     transform: scale(1.1);
+}
+
+/*-------------------------------------*/
+/*----------ACCUEIL--------------------*/
+/*-------------------------------------*/
+.text_accueil{
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.image_accueil{
+    margin-top: -3%;
 }
 
 /*-------------------------------------*/
