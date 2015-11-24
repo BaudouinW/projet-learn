@@ -104,14 +104,24 @@ nav{
 
 .menu_droit li a:hover{
     border-left-color: blue;
+    color: brown;
 }
 
 .menu_droit ul ul li a:hover{
     border-left-color: #5eb5e0;
+    color: brown;
 }
 
 .menu_droit ul.niveau1 li.sous_menu:hover ul.niveau2{
     display: block;
+}
+
+.fleche_menu{
+    width: 10%;
+    height: 30px;
+    float: right;
+    margin-right: 5%;
+    margin-left: -12%;
 }
 
 .menu_article_recent{
