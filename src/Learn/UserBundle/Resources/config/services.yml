@@ -1,4 +1,1 @@
 services:
-#    learn_user.example:
-#        class: Learn\UserBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]

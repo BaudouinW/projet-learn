@@ -1,0 +1,24 @@
+fos_user_registration_register:
+   path: /inscription
+   defaults: { _controller:FOSUserBundle:Registration:register}
+   methods:
+       - GET
+       - POST
+       
+fos_user_registration_check_email:
+    path: /verifiation-email
+    defaults: { _controller:FOSUserBundle:Registration:checkEmail}
+    methods:
+        - GET
+        
+fos_user_registration_confirm:
+    path:    /confirmation/{token}
+    defaults: { _controller:FOSUserBundle:Registration:confirm}
+    methods:
+        - GET
+        
+fos_user_registration_confirmed:
+    path:   /confirmation
+    defaults: { _controller:FOSUserBundle:Registration:confirmed}
+    methods:
+        - GET

@@ -1,0 +1,15 @@
+Learn_fos_user_connexion:
+    resource: "@LearnUserBundle/Resources/config/routing/connexion.yml"
+
+Learn_fos_user_inscritpion:
+    resource: "@LearnUserBundle/Resources/config/routing/inscription.yml"
+    
+Learn_fos_user_profile:
+    resource: "@LearnUserBundle/Resources/config/routing/profile.yml"
+    
+Learn_fos_user_change_password:
+    resource: "@LearnUserBundle/Resources/config/routing/change_mot_passe.yml"
+    
+Learn_fos_user_password_oublier:
+    resource: "@LearnUserBundle/Resources/config/routing/mot_de_passe_oublier.yml"
+    

@@ -1,0 +1,12 @@
+fos_user_profile_show:
+    path:   /profile
+    defaults: { _controller:FOSUserBundle:Profile:show}
+    methods:
+        - GET
+        
+fos_user_profile_edit:
+    path:   /modifier
+    defaults: { _controller:FOSUserBundle:Profile:edit}
+    methods:
+        - GET
+        - POST

@@ -88,6 +88,7 @@ nav{
     top: 0;
     left: 100%;
     display: none;
+    z-index: 10;
 }
 
 .menu_droit li a{
@@ -105,11 +106,13 @@ nav{
 .menu_droit li a:hover{
     border-left-color: blue;
     color: brown;
+    transform: scale(1.1);
 }
 
 .menu_droit ul ul li a:hover{
     border-left-color: #5eb5e0;
     color: brown;
+    transform: scale(1.1);
 }
 
 .menu_droit ul.niveau1 li.sous_menu:hover ul.niveau2{

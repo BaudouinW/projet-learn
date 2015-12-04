@@ -7,7 +7,7 @@
     </div>
     <div class="connexion">
         <label>Espace Connexion</label><br/>
-          {% include 'LearnUserBundle::Security/login.html.twig' %}
+          {% include 'LearnUserBundle::layout.html.twig' %}
     </div>
 </header>
 {% block nav %}
@@ -17,8 +17,10 @@
             <li><a href="{{ path('learn_project_homepage') }}">Accueil</a></li>
             <li><a href="{{ path('learn_project_blog') }}">Espace Blog</a></li>
             <li><a href="{{ path('learn_project_shop') }}">Espace E-commerce</a></li>
-            <li><a href="{{ path('learn_project_add_article') }}">Ajouter article</a></li>
-            <li><a href="{{ path('learn_project_register') }}">S'inscrire</a></li>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") and is_granted("ROLE_ADMIN") %}
+                <li><a href="{{ path('learn_project_add_article') }}">Ajouter article</a></li>
+            {% endif %}
+            <li><a href="{{ path('fos_user_registration_register') }}">S'inscrire</a></li>
             <li><a href="{{ path('learn_project_contact') }}">Contactez moi</a></li>
         </ul>
     </div>

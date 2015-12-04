@@ -1,0 +1,6 @@
+fos_user_change_password:
+    path:   /change_mot_de_passe
+    defaults: { _controller:FOSUserBundle:ChangePassword:changePassword}
+    methods:
+        - GET
+        - POST

@@ -6,13 +6,9 @@ learn_blog:
     resource: "@LearnBlogBundle/Resources/config/routing.yml"
     prefix:   /
 
-learn_user:
-    resource: "@LearnUserBundle/Resources/config/routing.yml"
-    prefix:   /
-
 learn_project:
     resource: "@LearnProjectBundle/Resources/config/routing.yml"
     prefix:   /
 
-fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+learn_fos_user:
+    resource: "@LearnUserBundle/Resources/config/routing/all.yml"
