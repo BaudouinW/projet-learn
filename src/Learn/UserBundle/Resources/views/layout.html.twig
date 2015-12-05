@@ -3,6 +3,16 @@
         <a href="{{ path('fos_user_security_logout') }}">
             {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
         </a>
+    {% if is_granted("ROLE_SUPER_ADMIN") %}
+    <a href="{{ path('Learn_project_administration') }}">
+        Administration
+    </a>
+    {% endif %}
+    {% if is_granted("ROLE_MODERATEUR") %}
+    <a href="{{ path('Learn_project_moderation') }}">
+        Modération
+    </a>
+    {% endif %}
     {% else %}
         {{ render(controller('FOSUserBundle:Security:Login')) }}
 {% endif %}

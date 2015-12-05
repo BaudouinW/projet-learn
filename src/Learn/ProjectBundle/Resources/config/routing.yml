@@ -5,3 +5,11 @@ learn_project_homepage:
 learn_project_contact:
     path:   /contact
     defaults:   {_controller: LearnProjectBundle:User:Contact}
+    
+Learn_project_moderation:
+    path:   /moderation
+    defaults:   {_controller: LearnProjectBundle:Accueil:Moderation}
+    
+Learn_project_administration:
+    path:   /administration
+    defaults:   {_controller: LearnProjectBundle:Accueil:Administration}

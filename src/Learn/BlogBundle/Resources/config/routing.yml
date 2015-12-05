@@ -3,29 +3,32 @@ learn_project_blog:
     defaults: {_controller: LearnBlogBundle:Blog:Accueil}
 
 learn_project_add_article:
-    path:     /blog/Ajout
+    path:     /blog/ajouter-article
     defaults: { _controller: LearnBlogBundle:Article:Add}
 
 learn_project_modif_article:
-    path:     /blog/Modif/{id}
+    path:     /blog/modifier-produit/{id}
     defaults: { _controller: LearnBlogBundle:Article:Modif}
+    options:
+        expose: true
     requirements:
-        id: \d+
+        _methods: POST
     
 learn_project_suppr_article:
-    path:     /blog/suppr/{id}
+    path:     /blog/supprimer-produit/{id}
     defaults: { _controller: LearnBlogBundle:Article:Suppr}
-    requirements:
-        id: \d+
+    options:
+        expose: true
 
 learn_project_detail_article:
     path:     /blog/article/{id}
     defaults: { _controller: LearnBlogBundle:Article:Detail}
     requirements:
         id: \d+
+        _methods: POST
 
 learn_project_add_comment:
-    path:   /comment/article/{id}
+    path:   /comment/{id}
     defaults: { _controller: LearnBlogBundle:Comment:add}
     requirements:
         _method: POST

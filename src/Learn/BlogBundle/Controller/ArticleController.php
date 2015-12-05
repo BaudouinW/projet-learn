@@ -8,7 +8,7 @@ use Learn\BlogBundle\Entity\Article;
 use Learn\BlogBundle\Form\ArticleType;
 use Learn\BlogBundle\Entity\Commentaire;
 use Learn\BlogBundle\Form\CommentaireType;
-
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Description of ArticleController
@@ -63,14 +63,14 @@ class ArticleController extends Controller {
 
         $article = $this->getArticle($id);
         $comment = $this->getDoctrine()->getManager()->getRepository('LearnBlogBundle:Commentaire')->findAllCommentById($id);
-        
+
         $commentaire = new Commentaire();
         $form = $this->createForm(new CommentaireType(), $commentaire);
 
         return $this->render('LearnProjectBundle::Default/detail_article.html.twig', array(
-            'article' => $article, 
-            'comments' => $comment,
-            'form' => $form->createView(),));
+                    'article' => $article,
+                    'comments' => $comment,
+                    'form' => $form->createView(),));
     }
 
     public function SupprAction($id) {
@@ -80,21 +80,19 @@ class ArticleController extends Controller {
         $em = $this->getDoctrine()->getManager();
         $em->remove($article);
         $em->flush();
-        
+
         return $this->redirectToRoute('learn_project_homepage');
     }
-    
-    protected function getArticle($id)
-    {
+
+    protected function getArticle($id) {
         $em = $this->getDoctrine()->getManager();
-        
+
         $article = $em->getRepository('LearnBlogBundle:Article')->find($id);
-        
-        if(!$article)
-        {
+
+        if (!$article) {
             throw $this->createNotFoundException('Article non trouvé');
         }
-        
+
         return $article;
     }
 

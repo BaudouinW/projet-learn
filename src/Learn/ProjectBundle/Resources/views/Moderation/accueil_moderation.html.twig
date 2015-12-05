@@ -1,0 +1,11 @@
+{% extends 'default/index.html.twig' %}
+
+{% block page %}
+    <h2>Espace Modération - Blog</h2>
+    
+    <button onclick="window.location.href='{{ path('learn_project_add_article') }}';">Ajouter un article</button>
+    <br/>
+    <button class="button_modif_article">Modifier un article</button> <input type="text" class="id_modif">
+    <br/>
+    <button class="button_suppr_article">Supprimer un article</button> <input type="text" class="id_suppr">
+{% endblock %}

@@ -12,3 +12,6 @@ learn_project:
 
 learn_fos_user:
     resource: "@LearnUserBundle/Resources/config/routing/all.yml"
+    
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"

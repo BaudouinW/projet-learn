@@ -6,13 +6,16 @@
     <p>{{ article.titre }}</br>
         {{ article.contenu }}</br>
         {{ article.auteur }} - {{ article.datePublication|date('d/m/Y') }}</p>
-    <button onclick="window.location.href = '{{ path('learn_project_modif_article', {'id': article.id}) }}';">modifier</button>
-    <button onclick="window.location.href = '{{ path('learn_project_suppr_article', {'id': article.id}) }}';">Supprimer</button>
-
-        {% for flashMessage in app.session.flashbag.get('notice') %}
-    <div class="flash-notice">
-            {{ flashMessage }}
-    </div>
+    
+    {% if is_granted("ROLE_SUPER_ADMIN") or is_granted("ROLE_MODERATEUR") %}
+        <button onclick="window.location.href = '{{ path('learn_project_modif_article', {'id': article.id}) }}';">modifier</button>
+        <button onclick="window.location.href = '{{ path('learn_project_suppr_article', {'id': article.id}) }}';">Supprimer</button>
+    {% endif %}
+        
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="flash-notice">
+                {{ flashMessage }}
+        </div>
     {% endfor %}
 </article>
 <div class="article_ajout_commentaire">

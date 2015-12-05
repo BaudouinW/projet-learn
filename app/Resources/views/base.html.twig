@@ -8,6 +8,18 @@
         {% endstylesheets %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {% javascripts filter='?yui_js'
+                '@LearnProjectBundle/Resources/public/js/jquery-2.1.4.min.js'
+                '@LearnProjectBundle/Resources/public/js/learn_project.js'
+                'bundles/fosjsrouting/js/router.js'
+                'js/fos_js_routes.js'
+            %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
     </body>
 </html>

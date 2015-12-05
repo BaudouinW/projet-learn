@@ -1,1 +1,7 @@
 services:
+    #Enregistrement du listener pour l'inscription
+    learn_user.register:
+        class: Learn\UserBundle\EventListener\RegisterListener
+        arguments: [@router]
+        tags:
+            - { name: kernel.event_subscriber }

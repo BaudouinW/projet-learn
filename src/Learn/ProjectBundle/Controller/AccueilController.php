@@ -16,4 +16,13 @@ class AccueilController extends Controller {
         return $this->render('LearnProjectBundle::accueil.html.twig');
     }
 
+    public function ModerationAction(){
+        
+        return $this->render('LearnProjectBundle::Moderation/accueil_moderation.html.twig');
+    }
+    
+    public function AdministrationAction(){
+        
+        return $this->render('LearnProjectBundle::Administration/accueil_admin.html.twig');
+    }
 }

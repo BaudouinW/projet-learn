@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Learn\UserBundle\LearnUserBundle(),
             new Learn\BlogBundle\LearnBlogBundle(),
             new Learn\ShopBundle\LearnShopBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
