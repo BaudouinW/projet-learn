@@ -78,12 +78,16 @@ doctrine:
 # Swiftmailer Configuration
 swiftmailer:
     transport:          gmail
-    username:         baudouin.developpeur@gmail.com
-    password:         te4nwvebn6
-    host:                 ~
+    username:           ~
+    password:           ~
+    host:               ~
 
-# app/config/config.yml
+# FOSUserBundle Configuration
 fos_user:
     db_driver: orm
     firewall_name: main
     user_class: Learn\UserBundle\Entity\User
+
+# FOSJsRouting Configuration
+fos_js_routing:
+    routes_to_expose: [ learn_project_modif_article ]
